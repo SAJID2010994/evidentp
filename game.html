@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jjd</title>
+	<style type="text/css" media="all">
+		*{
+			padding:0;
+			margin:0;
+		}
+		canvas{
+			position:absolute;
+			image-rendering:crisp;
+			image-rendering:pixelated;
+		}
+		.chat{
+		  width:100vw;
+		  height:100vh;
+		  position: fixed;
+		  left: 0px;
+		  top: 0px;
+		  color: green;
+		  z-index: 500;
+		  background-color: #0000007D;
+		}
+		#inpBox{
+		  background-color:white;
+		  outline: none;
+		  border:none;
+		  width: 100vw;
+		  height: 10vh;
+		  position: relative;
+		  top: 90vh;
+		  font-family: mcpe;
+		}
+		#chatBtn{
+			position: fixed;
+			z-index: 1000;
+			left: 40vw;
+			width: 50px;
+		
+		}
+		.messages{
+			width: 100vw;
+			height:90vh;
+			position:fixed;
+			overflow-y: scroll;
+			left:0px;
+			top:0px;
+			display: flex;
+			flex-direction:column;
+			font-family: mcpe;
+		}
+		label{
+			z-index: 100;
+		}
+		.msgs{
+			background-color: transparent;
+			position:fixed;
+			top: 0px;
+			left: 0px;
+			width: 50%;
+			height: 50%;
+		z-index: 100;
+		display: flex;
+flex-direction:column;
+font-family: mcpe;
+overflow: hidden;
+		}
+		#dashBtn{
+			position:fixed;
+			right: 10%;
+			top:10%;
+			z-index: 500;
+			image-rendering: pixelated;
+		}
+		.front{
+	background: url(textures/joystick_thumb.png) no-repeat !important;
+	background-size: cover !important;
+	opacity: 1 !important;
+	border-radius: 0px !important;
+	scale: 0.9;
+	image-rendering:pixelated;
+}
+.back{
+	background: url(textures/joystick.png) no-repeat !important;
+	background-size: cover !important;
+opacity: 1 !important;
+image-rendering:pixelated;
+}
+	</style>
+</head>
+<body>
+	<div id="zone">
+		
+	</div>
+	
+	
+<button id="chatBtn" onclick="if(chatOpen){document.querySelector('.chat').setAttribute('hidden','true');document.querySelector('#zone').style.visibility='visible';chatOpen=false;document.querySelector('.msgs').style.visibility='visible';document.querySelector('#inpBox').value=null;}else{document.querySelector('.chat').removeAttribute('hidden');document.querySelector('#zone').style.visibility='hidden';chatOpen=true;document.querySelector('.msgs').style.visibility='hidden';}">Chat</button>
+	
+<div class="chat" hidden>
+	<div class="messages">
+		
+	</div>
+  <input type="search" name="msg" id="inpBox" placeholder="" autocomplete="off" autofill="false"/>
+</div>
+<div class="msgs">
+	
+</div>
+	
+	
+	
+	
+	
+	
+	<img src="textures/dash_btn.png" id="dashBtn">
+	
+	
+	
+	
+	
+	
+	
+<!-- Firebase v8.2.6: core (firebase-app) -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+<!-- Firebase v8.2.6: Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+
+<script src="external-libs/lodash.min.js"></script>
+<script src="external-libs/nipple.js"></script>
+<script src="external-libs/pixi.min.js"></script>
+<script src="external-libs/pixi-tilemap.js"></script>
+<script src="external-libs/filter.js"></script>
+<script src="scripts/animationController.js"></script>
+<script src="scripts/variables.js"></script>
+<script src="scripts/multiplayer.js"></script>
+<script src="scripts/vector.js"></script>
+<script src="scripts/sceneRunner.js"></script>
+<script src="scripts/cameraAndControls.js"></script>
+<script src="scripts/chunkTile.js"></script>
+<script src="animations/player.animation.js"></script>
+<script src="scripts/chunkFunctions.js"></script>
+<script src="scripts/player.js"></script>
+<script src="app.js"></script>
+"></script>
+</body>
+</html>
