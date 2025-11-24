@@ -235,7 +235,7 @@ db.ref('players/justLeft').on('value', snap => {
 	if (playerName != snap.val()) {
 		try {
 		  showMessage(`${snap.val()} just left the game!`,null,'yellow','serverInfo')
-			players[snap.val()].container.destroy()
+			players[snap.val()].container.destroy({children:true})
 			db.ref(`players/container/${snap.val()}`).off()
 			delete players[snap.val()]
 		} catch (e) {}
